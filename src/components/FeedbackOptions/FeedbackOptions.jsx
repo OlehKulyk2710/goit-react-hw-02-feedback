@@ -11,7 +11,11 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
           const id = shortid.generate();
           return (
             <li key={id} className="feedback__item">
-              <button type="button" onClick={onLeaveFeedback}>
+              <button
+                type="button"
+                onClick={onLeaveFeedback}
+                className="feedback__btn"
+              >
                 {option}
               </button>
             </li>
