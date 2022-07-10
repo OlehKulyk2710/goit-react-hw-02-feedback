@@ -3,7 +3,7 @@ import Statistics from 'components/Statistics/Statistics';
 import FeedbackOptions from 'components/FeedbackOptions/FeedbackOptions';
 import Section from 'components/Section/Section';
 import Notification from 'components/Notification/Notification';
-import './App.css';
+import css from './App.module.css';
 
 class App extends Component {
   state = {
@@ -21,11 +21,8 @@ class App extends Component {
 
   countTotalFeedback = () => {
     const feedbacksValues = Object.values(this.state);
-    let totalFeedbacks = 0;
-    for (const value of feedbacksValues) {
-      totalFeedbacks = totalFeedbacks + value;
-    }
-    return totalFeedbacks;
+
+    return feedbacksValues.reduce((prev, value) => prev + value, 0);
   };
 
   countPositiveFeedbackPercentage = () => {
@@ -40,8 +37,8 @@ class App extends Component {
     const buttonsNames = Object.keys(this.state);
 
     return (
-      <div className="container">
-        <h1 className="header__title">Cafe Espresso (feedbacks)</h1>
+      <div className={css.container}>
+        <h1 className={css.header__title}>Cafe Espresso (feedbacks)</h1>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={buttonsNames}

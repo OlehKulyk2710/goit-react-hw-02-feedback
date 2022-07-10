@@ -1,20 +1,20 @@
 import shortid from 'shortid';
 import PropTypes from 'prop-types';
 
-import './FeedbackOptions.css';
+import css from './FeedbackOptions.module.css';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
-    <div className="feedback__container">
-      <ul className="list feedback__list">
+    <div className={css.feedback__container}>
+      <ul className={css.feedback__list}>
         {options.map(option => {
           const id = shortid.generate();
           return (
-            <li key={id} className="feedback__item">
+            <li key={id} className={css.feedback__item}>
               <button
                 type="button"
                 onClick={onLeaveFeedback}
-                className="feedback__btn"
+                className={css.feedback__btn}
               >
                 {option}
               </button>

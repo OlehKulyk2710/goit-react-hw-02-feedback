@@ -1,27 +1,27 @@
-import './Statistics.css';
+import css from './Statistics.module.css';
 import PropTypes from 'prop-types';
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
     <>
-      <div className="statistics__container">
-        <ul className="statistics__list">
-          <li className="statistics__item">
+      <div className={css.statistics__container}>
+        <ul className={css.statistics__list}>
+          <li className={css.statistics__item}>
             Good: <span>{good}</span>
           </li>
-          <li className="statistics__item">
+          <li className={css.statistics__item}>
             Neutral: <span>{neutral}</span>
           </li>
-          <li className="statistics__item">
+          <li className={css.statistics__item}>
             Bad: <span>{bad}</span>
           </li>
         </ul>
       </div>
-      <ul className="sum__list">
-        <li className="sum__totalFb">
+      <ul className={css.sum__list}>
+        <li className={css.sum__totalFb}>
           Total: <span>{total}</span>
         </li>
-        <li className="sum__positiveFb">
+        <li className={css.sum__positiveFb}>
           Positive feedbacks: <span>{positivePercentage}%</span>
         </li>
       </ul>
